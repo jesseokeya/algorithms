@@ -3,5 +3,5 @@ Data structures and algorithms in javascript for interview practice
 
 ### Run Test Example
 ```
-npm run text anagrams/test.js
+npm test anagrams/test.js
 ```
