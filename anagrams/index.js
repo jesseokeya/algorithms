@@ -9,32 +9,17 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    let result = true
-    const trackStringA = {}
-    const trackStringB = {}
-    stringA = stringA.replace(/[^\w]/g, '').toLowerCase().split('')
-    stringB = stringB.replace(/[^\w]/g, '').toLowerCase().split('')
-    const { maxKeys, minKeys } = Object.keys(trackStringA).length > Object.keys(trackStringB).length 
-        ? { maxKeys: trackStringA, minKeys: trackStringB }
-        : { maxKeys: trackStringB, minKeys: trackStringA }
-    for (let i = 0; i < stringA.length; i++) {
-        if (trackStringA[stringA[i]]) {
-            trackStringA[stringA[i]]++
-        } else {
-            trackStringA[stringA[i]] = 1
-        }
-    }
-    for (let i = 0; i < stringB.length; i++) {
-        if (trackStringB[stringB[i]]) {
-            trackStringB[stringB[i]]++
-        } else {
-            trackStringB[stringB[i]] = 1
-        }
-    }
-    for (let key in maxKeys) {
-        result = result && maxKeys[key] === minKeys[key]
-    }
-    return result
+    return cleanString(stringA) === cleanString(stringB);
 }
+
+function cleanString(str) {
+    return str
+        .replace(/[^\w]/g, '')
+        .toLowerCase()
+        .split('')
+        .sort()
+        .join('');
+}
+
 
 module.exports = anagrams;
