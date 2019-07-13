@@ -5,6 +5,12 @@
 // every node's right hand child is greater than
 // the parent
 
-function validate(node, min = null, max = null) {}
+function validate(node, min = -Infinity, max = Infinity) {
+    if (!node) { return true }
+    if (node.val < min || node.val > max) { return false }
+    const left = validate(node.left, min, node.val - 1)
+    const right = validate(node.right, node.val + 1, max)
+    return left && right
+}
 
 module.exports = validate;
