@@ -400,13 +400,13 @@ class DoublyLinkedList {
 }
 
 /** Binary Search Tree */
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
+// class Node {
+//   constructor(value) {
+//     this.value = value
+//     this.left = null
+//     this.right = null
+//   }
+// }
 
 class BinarySearchTree {
   constructor() {
@@ -479,19 +479,160 @@ class BinarySearchTree {
   }
 }
 
-const tree = new BinarySearchTree();
-tree.insert(50);
-tree.insert(10);
-tree.insert(12);
-tree.insert(3);
-tree.insert(1);
-tree.insert(25);
-tree.insert(4);
-tree.insert(60);
-tree.insert(100);
+/**
+ * child => 2n - 1 && 2n - 2
+ * parent =>  (n - 1)/2 && (n - 2)/2
+ **/
+class MaxBinaryHeap {
+  constructor() {
+    this.values = [];
+  }
 
-tree.find(10);
+  insert(val) {
+    this.values.push(val);
+    this.bubbleUp();
+    return this;
+  }
 
-// BinarySearchTree.print(tree)
+  extractMax() {
+    const last = this.values.length - 1;
+    [this.values[last], this.values[0]] = [this.values[0], this.values[last]];
+    this.values.pop();
+    let index = 0,
+      elem = this.values[index],
+      right = Math.floor(index * 2 + 1),
+      left = Math.floor(index * 2 + 2);
+    while (
+      index < this.values.length &&
+      (elem < this.values[left] || elem < this.values[right])
+    ) {
+      console.log("index:", index);
+      console.log("element:", elem);
+      if (this.values[left] > this.values[right]) {
+        [this.values[left], this.values[index]] = [
+          this.values[index],
+          this.values[left]
+        ];
+        index = left;
+        left = Math.floor(index * 2 + 2);
+      } else {
+        [this.values[right], this.values[index]] = [
+          this.values[index],
+          this.values[right]
+        ];
+        index = right;
+        right = Math.floor(index * 2 + 2);
+      }
+    }
+    return this;
+  }
 
-binarySearch([2, 4, 5, 10, 15, 67, 100, 102, 233, 400, 500, 600], 233);
+  bubbleUp() {
+    let index = this.values.length - 1,
+      ctx = Math.floor((index - 1) / 2);
+    while (index > 0 && this.values[index] > this.values[ctx]) {
+      [this.values[index], this.values[ctx]] = [
+        this.values[ctx],
+        this.values[index]
+      ];
+      index = ctx;
+      ctx = Math.floor((index - 1) / 2);
+    }
+  }
+}
+
+/* PriorityQueue */
+class Node {
+  constructor(val, priority) {
+    this.val = val;
+    this.priority = priority;
+  }
+}
+
+class PriorityQueue {
+  constructor() {
+    this.values = [];
+  }
+
+  enqueue(val, priority) {
+    const node = new Node(val, priority);
+    this.values.push(node);
+    this.bubbleUp();
+    return this;
+  }
+
+  bubbleUp() {
+    let index = this.values.length - 1,
+      parentIndex = Math.floor((index - 1) / 2);
+    while (index > 0) {
+      const elem = this.values[index];
+      const parentElement = this.values[parentIndex];
+      if (parentElement.priority > elem.priority) {
+        [this.values[index], this.values[parentIndex]] = [
+          this.values[parentIndex],
+          this.values[index]
+        ];
+      }
+      index = parentIndex;
+      parentIndex = Math.floor((index - 1) / 2);
+    }
+  }
+
+  dequeue() {
+    const min = this.values[0];
+    const end = this.values.pop();
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
+    return this;
+  }
+
+  sinkDown() {
+    let idx = 0;
+    const length = this.values.length;
+    const element = this.values[0];
+    while (true) {
+      let leftChildIdx = 2 * idx + 1;
+      let rightChildIdx = 2 * idx + 2;
+      let leftChild, rightChild;
+      let swap = null;
+
+      if (leftChildIdx < length) {
+        leftChild = this.values[leftChildIdx];
+        if (leftChild.priority < element.priority) {
+          swap = leftChildIdx;
+        }
+      }
+      if (rightChildIdx < length) {
+        rightChild = this.values[rightChildIdx];
+        if (
+          (swap === null && rightChild.priority < element.priority) ||
+          (swap !== null && rightChild.priority < leftChild.priority)
+        ) {
+          swap = rightChildIdx;
+        }
+      }
+      if (swap === null) break;
+      this.values[idx] = this.values[swap];
+      this.values[swap] = element;
+      idx = swap;
+    }
+  }
+}
+
+const priorityQueue = new PriorityQueue();
+priorityQueue.enqueue("Common Cold", 5);
+priorityQueue.enqueue("Gunshot Wound", 1);
+priorityQueue.enqueue("High Fever", 4);
+priorityQueue.enqueue("Broken Arm", 2);
+priorityQueue.enqueue("Glass In Foot", 3);
+priorityQueue.enqueue("HIV", 8);
+priorityQueue.enqueue("Lower Back Pain", 10);
+priorityQueue.enqueue("Sexually Transmitted Disease", 11);
+priorityQueue.enqueue("Headache", 20);
+priorityQueue.enqueue("Poison", 9);
+
+priorityQueue.dequeue();
+priorityQueue.dequeue();
+// priorityQueue.dequeue()
