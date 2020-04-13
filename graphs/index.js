@@ -56,8 +56,8 @@ graph.addEdge("Japan", "Dallas");
 graph.addEdge("Dallas", "Aspen");
 graph.addEdge("Tokyo", "Dallas");
 
-graph.removeEdge("Tokyo", "Aspen");
-graph.removeVertex("Japan")
-graph.removeVertex("Ottawa");
+// graph.removeEdge("Tokyo", "Aspen");
+// graph.removeVertex("Japan")
+// graph.removeVertex("Ottawa");
 console.log(graph);
 
