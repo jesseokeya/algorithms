@@ -4,25 +4,21 @@
  * @return {boolean}
  */
 var canFormArray = function(arr, pieces) {
-    const reference = {}
-    
-    for (const piece of pieces) {
-        let first = piece[0]
-        reference[first] = piece
+    const cache = {}, joined = arr.join('')
+​
+    for (let i = 0; i < pieces.length; i++) {
+        const piece = pieces[i]
+        cache[piece[0]] = piece
     }
     
-    let collect = [], idx = 0
+    let context = '', idx = 0
     
     while (idx < arr.length) {
-        const val = arr[idx]
-        const piece = reference[val]
-        
+        const value = arr[idx], piece = cache[value]
         if (!piece) return false
-        
-        collect.push(...piece)
-        
+        context += piece.join('')
         idx += piece.length
     }
     
-    return collect.join() === arr.join()
+    return context === joined
 };
