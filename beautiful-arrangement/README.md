@@ -1,3 +1,4 @@
+[Discussion Post (created on 3/0/2021 at 5:15)](https://leetcode.com/problems/beautiful-arrangement/discuss/999757/Javascript-Solution.-Easy-to-understand)  
 <h2>526. Beautiful Arrangement</h2><h3>Medium</h3><hr><div><p>Suppose you have <code>n</code> integers from <code>1</code> to <code>n</code>. We define a beautiful arrangement as an array that is constructed by these <code>n</code> numbers successfully if one of the following is true for the <code>i<sup>th</sup></code> position (<code>1 &lt;= i &lt;= n</code>) in this array:</p>
 
 <ul>
