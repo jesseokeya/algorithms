@@ -1,15 +1,25 @@
+ */
+MyQueue.prototype.push = function(x) {
+    const length = this.first.length
+    for (let i = 0; i < length; i++) {
+        this.last.push(this.first.pop())
+    }
+    this.last.push(x)
+    this.length++
+};
 ​
 /**
  * Removes the element from in front of queue and returns that element.
  * @return {number}
  */
 MyQueue.prototype.pop = function() {
-    const length = this.last.length;
+    const length = this.last.length
     for (let i = 0; i < length; i++) {
-      this.first.push(this.last.pop());
+        this.first.push(this.last.pop())
     }
     this.length--
     return this.first.pop()
+    
 };
 ​
 /**
@@ -18,9 +28,9 @@ MyQueue.prototype.pop = function() {
  */
 MyQueue.prototype.peek = function() {
     if (this.last.length > 0) {
-      return this.last[0];
+        return this.last[0]
     }
-    return this.first[this.first.length - 1];
+    return this.first[this.first.length - 1]
 };
 ​
 /**
