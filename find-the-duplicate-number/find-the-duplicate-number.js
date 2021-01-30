@@ -3,17 +3,17 @@
  * @return {number}
  */
 var findDuplicate = function(nums) {
-  let tortoise = nums[0], hare = nums[0]
-  while (true) {
-      tortoise = nums[tortoise]
-      hare = nums[nums[hare]]
-      if (tortoise === hare) break
-  }
+    let first = nums[0], second = nums[0]
+    while (true) {
+        first = nums[first]
+        second = nums[nums[second]]
+        if (first === second) break
+    }
     
-  let ptr1 = nums[0], ptr2 = tortoise
-  while (ptr1 !== ptr2) {
-      ptr1 = nums[ptr1]
-      ptr2 = nums[ptr2]
-  }
-  return ptr1
+    let p1 = nums[0], p2 = first
+    while (p1 !== p2) {
+        p1 = nums[p1]
+        p2 = nums[p2]
+    }
+    return p1
 };
