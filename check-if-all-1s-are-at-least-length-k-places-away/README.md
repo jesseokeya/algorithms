@@ -1,3 +1,4 @@
+[Discussion Post (created on 31/0/2021 at 4:57)](https://leetcode.com/problems/check-if-all-1s-are-at-least-length-k-places-away/discuss/1043560/Javascript-Solution)  
 <h2>1437. Check If All 1's Are at Least Length K Places Away</h2><h3>Easy</h3><hr><div><p>Given an array <code>nums</code> of 0s and 1s and an integer <code>k</code>, return <code>True</code> if all 1's are at least <code>k</code> places away from each other, otherwise return <code>False</code>.</p>
 
 <p>&nbsp;</p>
