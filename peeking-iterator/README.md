@@ -1,3 +1,4 @@
+[Discussion Post (created on 8/1/2021 at 7:46)](https://leetcode.com/problems/peeking-iterator/submissions/)  
 <h2>284. Peeking Iterator</h2><h3>Medium</h3><hr><div><p>Given an Iterator class interface with methods: <code>next()</code> and <code>hasNext()</code>, design and implement a PeekingIterator that support the <code>peek()</code> operation -- it essentially peek() at the element that will be returned by the next call to next().</p>
 
 <p><strong>Example:</strong></p>
