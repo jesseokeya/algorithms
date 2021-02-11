@@ -1,3 +1,4 @@
+[Discussion Post (created on 10/1/2021 at 22:29)](https://leetcode.com/problems/intersection-of-two-arrays-ii/discuss/1060110/Javascript-Solution)  
 <h2>350. Intersection of Two Arrays II</h2><h3>Easy</h3><hr><div><p>Given two arrays, write a function to compute their intersection.</p>
 
 <p><strong>Example 1:</strong></p>
