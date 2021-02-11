@@ -1,3 +1,4 @@
+[Discussion Post (created on 11/1/2021 at 8:14)](https://leetcode.com/problems/valid-anagram/discuss/1060776/Javascript-Solution.-Beats-99)  
 <h2>242. Valid Anagram</h2><h3>Easy</h3><hr><div><p>Given two strings <em>s</em> and <em>t&nbsp;</em>, write a function to determine if <em>t</em> is an anagram of <em>s</em>.</p>
 
 <p><b>Example 1:</b></p>
