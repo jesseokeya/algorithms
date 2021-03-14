@@ -1,3 +1,4 @@
+[Discussion Post (created on 14/2/2021 at 14:54)](https://leetcode.com/problems/swap-nodes-in-pairs/discuss/1109665/Javascript-Solution.-Beats-90)  
 <h2>24. Swap Nodes in Pairs</h2><h3>Medium</h3><hr><div><p>Given a&nbsp;linked list, swap every two adjacent nodes and return its head.</p>
 
 <p>You may <strong>not</strong> modify the values in the list's nodes. Only nodes itself may be changed.</p>
