@@ -1,3 +1,4 @@
+[Discussion Post (created on 14/2/2021 at 14:56)](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/discuss/1109669/Javascript-Solution.-Easy-to-understand)  
 <h2>1721. Swapping Nodes in a Linked List</h2><h3>Medium</h3><hr><div><p>You are given the <code>head</code> of a linked list, and an integer <code>k</code>.</p>
 
 <p>Return <em>the head of the linked list after <strong>swapping</strong> the values of the </em><code>k<sup>th</sup></code> <em>node from the beginning and the </em><code>k<sup>th</sup></code> <em>node from the end (the list is <strong>1-indexed</strong>).</em></p>
