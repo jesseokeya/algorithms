@@ -1,3 +1,4 @@
+[Discussion Post (created on 2/3/2021 at 2:20)](https://leetcode.com/problems/number-of-different-integers-in-a-string/discuss/1138385/Javascript-Solution)  
 <h2>1805. Number of Different Integers in a String</h2><h3>Easy</h3><hr><div><p>You are given a string <code>word</code> that consists of digits and lowercase English letters.</p>
 
 <p>You will replace every non-digit character with a space. For example, <code>"a123bc34d8ef34"</code> will become <code>" 123&nbsp; 34 8&nbsp; 34"</code>. Notice that you are left with some integers that are separated by at least one space: <code>"123"</code>, <code>"34"</code>, <code>"8"</code>, and <code>"34"</code>.</p>
