@@ -1,3 +1,4 @@
+[Discussion Post (created on 11/3/2021 at 21:3)](https://leetcode.com/problems/deepest-leaves-sum/discuss/1154221/Go-Golang-Solution)  
 <h2>1302. Deepest Leaves Sum</h2><h3>Medium</h3><hr><div bis_skin_checked="1">Given the <code>root</code> of a binary tree, return <em>the sum of values of its deepest leaves</em>.
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
