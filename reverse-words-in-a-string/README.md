@@ -1,4 +1,3 @@
-[Discussion Post (created on 15/3/2021 at 23:8)](https://leetcode.com/problems/reverse-words-in-a-string/discuss/1160697/Go-Golang-Solution.-Beats-100)  
 <h2>151. Reverse Words in a String</h2><h3>Medium</h3><hr><div bis_skin_checked="1"><p>Given an input string <code>s</code>, reverse the order of the <strong>words</strong>.</p>
 
 <p>A <strong>word</strong> is defined as a sequence of non-space characters. The <strong>words</strong> in <code>s</code> will be separated by at least one space.</p>
