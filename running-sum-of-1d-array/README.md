@@ -1,3 +1,4 @@
+[Discussion Post (created on 3/4/2021 at 10:13)](https://leetcode.com/problems/running-sum-of-1d-array/discuss/1189477/Javascript-Solution.-O(n))  
 [Discussion Post (created on 3/4/2021 at 10:11)](https://leetcode.com/problems/running-sum-of-1d-array/discuss/1189474/Go-Golang-Solution)  
 <h2>1480. Running Sum of 1d Array</h2><h3>Easy</h3><hr><div bis_skin_checked="1"><p>Given an array <code>nums</code>. We define a running sum of an array as&nbsp;<code>runningSum[i] = sum(nums[0]…nums[i])</code>.</p>
 
