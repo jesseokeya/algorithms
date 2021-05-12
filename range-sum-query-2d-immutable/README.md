@@ -1,3 +1,4 @@
+[Discussion Post (created on 12/4/2021 at 7:16)](https://leetcode.com/problems/range-sum-query-2d-immutable/discuss/1204422/Go-Golang-Solution)  
 <h2>304. Range Sum Query 2D - Immutable</h2><h3>Medium</h3><hr><div bis_skin_checked="1"><p>Given a 2D matrix <code>matrix</code>, handle multiple queries of the following type:</p>
 
 <ol>
