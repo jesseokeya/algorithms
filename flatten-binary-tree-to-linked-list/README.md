@@ -1,3 +1,4 @@
+[Discussion Post (created on 14/4/2021 at 7:42)](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/discuss/1207921/Go-Golang-Solution)  
 <h2>114. Flatten Binary Tree to Linked List</h2><h3>Medium</h3><hr><div bis_skin_checked="1"><p>Given the <code>root</code> of a binary tree, flatten the tree into a "linked list":</p>
 
 <ul>
