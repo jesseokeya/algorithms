@@ -1,3 +1,4 @@
+[Discussion Post (created on 25/4/2021 at 17:12)](https://leetcode.com/problems/evaluate-reverse-polish-notation/discuss/1230719/Go-Golang-Solution)  
 <h2>150. Evaluate Reverse Polish Notation</h2><h3>Medium</h3><hr><div bis_skin_checked="1"><p>Evaluate the value of an arithmetic expression in <a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation" target="_blank">Reverse Polish Notation</a>.</p>
 
 <p>Valid operators are <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>. Each operand may be an integer or another expression.</p>
