@@ -1,3 +1,4 @@
+[Discussion Post (created on 28/4/2021 at 17:33)](https://leetcode.com/problems/word-break/discuss/1237104/Go-Golang-Solution.-Beats-100)  
 <h2>139. Word Break</h2><h3>Medium</h3><hr><div bis_skin_checked="1"><p>Given a string <code>s</code> and a dictionary of strings <code>wordDict</code>, return <code>true</code> if <code>s</code> can be segmented into a space-separated sequence of one or more dictionary words.</p>
 
 <p><strong>Note</strong> that the same word in the dictionary may be reused multiple times in the segmentation.</p>
