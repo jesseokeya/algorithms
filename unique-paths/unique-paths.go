@@ -1,20 +1,25 @@
 func uniquePaths(m int, n int) int {
-    var walk func(m, n int, memo map[string]int) int
+    dp := make([][]int, m)
     
-    walk = func(r, c int, memo map[string]int) int {
-        key := fmt.Sprintf("%d,%d", r, c)
-        value, ok := memo[key]
-        
-        if ok { return value }
-        
-        if r == 1 && c == 1 { return 1 }
-        if r == 0 || c == 0 { return 0 }
-        
-        result :=  walk(r - 1, c, memo) + walk(r, c - 1, memo)
-        memo[key] = result
-        
-        return result
+    for i := 0; i < m; i++ {
+        dp[i] = make([]int, n)
     }
     
-    return walk(m, n, map[string]int{})
+    dp[0][0] = 1
+    
+    for i := 0; i < m; i++ {
+        for j := 0; j < n; j++ { 
+            current := dp[i][j]
+            if j + 1 < n {
+                dp[i][j + 1] += current
+            }
+            if i + 1 < m {
+                dp[i + 1][j] += current
+            }
+        }
+    }
+    
+    
+    
+    return dp[m - 1][n - 1]
 }
