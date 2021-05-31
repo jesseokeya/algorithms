@@ -1,3 +1,4 @@
+[Discussion Post (created on 31/4/2021 at 4:45)](https://leetcode.com/problems/reverse-linked-list/discuss/1242719/Go-Golang-Solution)  
 <h2>206. Reverse Linked List</h2><h3>Easy</h3><hr><div><p>Reverse a singly linked list.</p>
 
 <p><strong>Example:</strong></p>
