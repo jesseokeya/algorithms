@@ -1,3 +1,4 @@
+[Discussion Post (created on 22/8/2021 at 20:34)](https://leetcode.com/problems/average-of-levels-in-binary-tree/discuss/1479940/Go-Golang-Solution)  
 <h2>637. Average of Levels in Binary Tree</h2><h3>Easy</h3><hr><div>Given a non-empty binary tree, return the average value of the nodes on each level in the form of an array.
 
 <p><b>Example 1:</b><br>
