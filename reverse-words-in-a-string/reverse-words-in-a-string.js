@@ -3,29 +3,16 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    const words = fields(s)
-    const values = words.split(' ')
+    let result = ""
+    const words = s.split(" ").filter(Boolean)
     
-    for (let i = 0; i < Math.floor(values.length / 2); i++) {
-        const idx = (values.length - i) - 1;
-        [values[i], values[idx]] = [values[idx], values[i]]
-    }
-    
-    return values.join(' ')
-};
-
-const fields = (sentence) => {
-    let result = ''
-    
-    for (let i = 0; i < sentence.length; i++) {
-        const char = sentence.charAt(i)
-        const last = result.charAt(result.length - 1)
-        if (!last || char.trim().length > 0) { 
-            result += char 
-        } else if (last.trim().length > 0 && i !== sentence.length - 1)  {
-            result += ' '
+    for(let i = words.length - 1; i >= 0; i--) {
+        if (i !== 0) {
+            result += words[i] + " "
+        } else {
+            result += words[i]
         }
     }
     
-    return result.trim()
-}
+    return result
+};
