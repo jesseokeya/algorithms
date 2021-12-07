@@ -8,7 +8,7 @@ var search = function(nums, target) {
     while (i <= j) {
         const mid = Math.floor((i + j) / 2), value = nums[mid]
         if (value > target) j = mid - 1
-        else if (value < target)  i = mid + 1
+        else if (value < target) i = mid + 1
         else return mid
     }
     return -1
