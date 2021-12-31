@@ -13,27 +13,13 @@
 var maxAncestorDiff = function(root) {
     let result = -Infinity
     
-    const queue = [root]
-    while (queue.length) {
-        const node = queue.shift()
-        result = Math.max(findAbsDiff(node, node.val), result)
-        if (node.left) queue.push(node.left)
-        if (node.right) queue.push(node.right)
+    const dfs = (node, currmax, currmin) => {
+        result = Math.max(result, Math.abs(currmax - currmin))
+        if (node.left) dfs(node.left, Math.max(currmax, node.left.val), Math.min(currmin, node.left.val))
+        if (node.right) dfs(node.right, Math.max(currmax, node.right.val), Math.min(currmin, node.right.val))
     }
+    
+    dfs(root, root.val, root.val)
     
     return result
 };
-
-const findAbsDiff = (root, value) => {
-    let result = -Infinity
-        
-    const queue = [root.left, root.right]
-    while (queue.length) {
-        const node = queue.shift() 
-        if (node) result = Math.max(result, Math.abs(node.val - value))
-        if (node && node.left) queue.push(node.left)
-        if (node && node.right) queue.push(node.right)
-   }
-    
-   return result
-}
