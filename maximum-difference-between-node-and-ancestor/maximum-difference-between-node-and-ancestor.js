@@ -15,8 +15,18 @@ var maxAncestorDiff = function(root) {
     
     const dfs = (node, currmax, currmin) => {
         result = Math.max(result, Math.abs(currmax - currmin))
-        if (node.left) dfs(node.left, Math.max(currmax, node.left.val), Math.min(currmin, node.left.val))
-        if (node.right) dfs(node.right, Math.max(currmax, node.right.val), Math.min(currmin, node.right.val))
+        
+        if (node.left) {
+            const max = Math.max(currmax, node.left.val)
+            const min = Math.min(currmin, node.left.val)
+            dfs(node.left, max, min)
+        }
+        
+        if (node.right) {
+            const max = Math.max(currmax, node.right.val)
+            const min = Math.min(currmin, node.right.val)
+            dfs(node.right, max, min)
+        }
     }
     
     dfs(root, root.val, root.val)
