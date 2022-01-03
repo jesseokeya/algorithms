@@ -1,3 +1,4 @@
+[Discussion Post (created on 3/0/2022 at 5:21)](https://leetcode.com/problems/find-the-town-judge/discuss/1664094/Javascript-Solution-with-comments)  
 <h2>997. Find the Town Judge</h2><h3>Easy</h3><hr><div><p>In a town, there are <code>n</code> people labeled from <code>1</code> to <code>n</code>. There is a rumor that one of these people is secretly the town judge.</p>
 
 <p>If the town judge exists, then:</p>
