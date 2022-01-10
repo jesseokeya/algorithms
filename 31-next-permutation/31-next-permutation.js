@@ -9,7 +9,6 @@ var nextPermutation = function(nums) {
     if (i >= 0) {
         let j = nums.length - 1
         while (j >= 0 && nums[j] <= nums[i]) j--
-        // Swap i & j in nums
         swap(nums, i, j)
     }
     
@@ -17,15 +16,14 @@ var nextPermutation = function(nums) {
 };
 
 const swap = (nums, i, j) => {
-    const temp = nums[i]
-    nums[i] = nums[j]
-    nums[j] = temp
+    const temp = nums[j]
+    nums[j] = nums[i]
+    nums[i] = temp
 }
 
 const reverse = (nums, start = 0) => {
     let end = nums.length - 1
     while (start < end) {
-        // Swap start & end in nums
         swap(nums, start, end)
         start++
         end--
