@@ -12,16 +12,12 @@
  */
 var sumRootToLeaf = function(root) {
     let result = 0
-    const dfs = (node, currSum) => {
-        currSum *= 2
-        currSum += node.val
-        if (!node.left && !node.right) {
-           result += currSum
-           return result 
-        }
-        if (node.left) dfs(node.left, currSum)
-        if (node.right) dfs(node.right, currSum)
+    const dfs = (node, s = '') => {
+        s += node.val
+        if(!node.left && !node.right) return result += parseInt(s, 2) 
+        if (node.left) dfs(node.left, s)
+        if (node.right) dfs(node.right, s)
     }
-    dfs(root, 0)
+    dfs(root)
     return result
 };
