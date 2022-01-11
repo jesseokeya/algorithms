@@ -11,13 +11,16 @@
  * @return {number}
  */
 var sumRootToLeaf = function(root) {
-    let result = 0
-    const dfs = (node, s = '') => {
-        s += node.val
-        if(!node.left && !node.right) return result += parseInt(s, 2) 
-        if (node.left) dfs(node.left, s)
-        if (node.right) dfs(node.right, s)
+    let sum = 0
+    const dfs = (node, prefix) => {
+        prefix += node.val
+        if (!node.left && !node.right) {
+            sum += parseInt(prefix, 2)
+            return sum
+        }
+        if (node.left) dfs(node.left, prefix)
+        if (node.right) dfs(node.right, prefix)
     }
-    dfs(root)
-    return result
+    dfs(root, '')
+    return sum
 };
