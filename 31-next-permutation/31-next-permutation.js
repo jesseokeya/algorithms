@@ -16,12 +16,12 @@ var nextPermutation = function(nums) {
 };
 
 const swap = (nums, i, j) => {
-    const temp = nums[j]
-    nums[j] = nums[i]
-    nums[i] = temp
+    const temp = nums[i]
+    nums[i] = nums[j]
+    nums[j] = temp
 }
 
-const reverse = (nums, start = 0) => {
+const reverse = (nums, start) => {
     let end = nums.length - 1
     while (start < end) {
         swap(nums, start, end)
