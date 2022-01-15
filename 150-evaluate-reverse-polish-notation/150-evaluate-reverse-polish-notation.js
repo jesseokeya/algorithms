@@ -14,9 +14,9 @@ var evalRPN = function(tokens) {
         const value = tokens[i], lastElem = stack[stack.length - 1]
         if (!specialTokens.has(value)) stack.push(value)
         else {
-            const operation = operations[value]
-            const first = parseInt(stack.pop()), second = parseInt(stack.pop())
-            stack.push(operation(second, first))
+            const fn = operations[value]
+            const first = Number(stack.pop()), second = Number(stack.pop())
+            stack.push(fn(second, first))
         }
     }
     return stack.pop()
