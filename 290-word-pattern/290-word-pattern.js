@@ -4,7 +4,7 @@
  * @return {boolean}
  */
 var wordPattern = function(pattern, s) {
-    let pointer = 0
+    let pointer = 0, result = true
     if (!pattern && !s) return true
     const words = s.split(" "), hmap = new Map(), seen = new Set()
     if (words.length !== pattern.length) return false
@@ -16,7 +16,6 @@ var wordPattern = function(pattern, s) {
         }
         pointer++
     }
-    let result = true
     for (let i = 0; i < words.length; i++) {
         const word = words[i]
         const char = hmap.get(word) || ""
