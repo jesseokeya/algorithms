@@ -1,3 +1,4 @@
+[Discussion Post (created on 18/0/2022 at 8:22)](https://leetcode.com/problems/can-place-flowers/discuss/1699858/Javascript-Solution)  
 <h2>unknown-problem</h2><h3>Easy</h3><hr><div><p>You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in <strong>adjacent</strong> plots.</p>
 
 <p>Given an integer array&nbsp;<code>flowerbed</code>&nbsp;containing <code>0</code>'s and <code>1</code>'s, where <code>0</code> means empty and <code>1</code> means not empty,&nbsp;and an integer <code>n</code>, return <em>if</em> <code>n</code> new flowers can be planted in the <code>flowerbed</code>&nbsp;without violating the no-adjacent-flowers rule.</p>
