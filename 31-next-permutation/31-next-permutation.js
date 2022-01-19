@@ -16,9 +16,9 @@ var nextPermutation = function(nums) {
 };
 
 const swap = (nums, i, j) => {
-    const temp = nums[i]
-    nums[i] = nums[j]
-    nums[j] = temp
+    const temp = nums[j]
+    nums[j] = nums[i]
+    nums[i] = temp
 }
 
 const reverse = (nums, start) => {
