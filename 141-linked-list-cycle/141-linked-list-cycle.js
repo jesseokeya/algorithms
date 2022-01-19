@@ -11,11 +11,11 @@
  * @return {boolean}
  */
 var hasCycle = function(head) {
-    const seen = new WeakMap()
+    const seen = new WeakSet()
     let node = head
     while (node) {
         if (seen.has(node)) return true
-        seen.set(node, true)
+        seen.add(node)
         node = node.next
     }
     return false
