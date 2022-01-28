@@ -1,3 +1,4 @@
+[Discussion Post (created on 28/0/2022 at 10:41)](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/1726636/Javascript-Solution)  
 <h2>208. Implement Trie (Prefix Tree)</h2><h3>Medium</h3><hr><div><p>Implement a trie with <code>insert</code>, <code>search</code>, and <code>startsWith</code> methods.</p>
 
 <p><b>Example:</b></p>
