@@ -4,12 +4,15 @@
  */
 var generateParenthesis = function(n) {
     const results = []
-    const permute = (left, right, prefix) => {
+    
+    const dfs = (left, right, str) => {
         if (left > right) return
-        if (left === 0 && right === 0) results.push(prefix)
-        if (left > 0) permute(left - 1, right, prefix + '(')
-        if (right > 0) permute(left, right - 1, prefix + ')')
+        if (!left && !right) results.push(str)
+        if (left > 0) dfs(left - 1, right, str + "(")
+        if (right > 0) dfs(left, right - 1, str + ")")
     }
-    permute(n, n, '')
+    
+    dfs(n, n, "")
+    
     return results
 };
