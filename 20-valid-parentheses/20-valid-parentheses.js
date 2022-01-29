@@ -14,6 +14,5 @@ var isValid = function(s) {
         if (!lastElem || brackets.get(char) !== lastElem) stack.push(char)
         else stack.pop()
     }
-    console.log(stack)
     return stack.length === 0
 };
