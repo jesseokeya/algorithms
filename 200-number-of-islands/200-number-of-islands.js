@@ -4,39 +4,37 @@
  */
 var numIslands = function(grid) {
     const visited = grid.map(row => row.map(cell => false))
-    const row = grid.length, col = grid[0].length
+    let islands = 0
     
-    let numOfIslands = 0
-    
-    for (let i = 0; i < row; i++) {
-        for (let j = 0; j < col; j++) {
-            if (dfs(grid, i, j, visited)) numOfIslands++
+    for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid[0].length; j++) {
+            if (dfs(grid, i, j, visited)) islands++
         }
     }
-        
-    return numOfIslands
+    
+    return islands
 };
 
 const dfs = (grid, i, j, visited) => {
     const stack = [[i, j]]
-    
-    let numOfIslands = 0
+    let foundIslands = 0
     
     while (stack.length) {
-        const [i, j] = stack.pop()
+        const [r, c] = stack.pop()
         
-        if (visited[i][j]) continue
-        visited[i][j] = true
+        if (visited[r][c]) continue
+        visited[r][c] = true
         
-        if (grid[i][j] === "0") continue
-        numOfIslands++
+        if (grid[r][c] === "0") continue
+        foundIslands++
         
-        if (i > 0 && !visited[i - 1][j]) stack.push([i - 1, j])
-        if (i < grid.length - 1 && !visited[i + 1][j]) stack.push([i + 1, j])
-        if (j > 0 && !visited[i][j - 1]) stack.push([i, j - 1])
-        if (j < grid[0].length - 1 && !visited[i][j + 1]) stack.push([i, j + 1])
+        if (r > 0 && !visited[r - 1][c]) stack.push([r - 1, c])
+        if (r < grid.length - 1 && !visited[r + 1][c]) stack.push([r + 1, c])
+        
+        if (c > 0 && !visited[r][c - 1]) stack.push([r, c - 1])
+        if (c < grid[0].length - 1 && !visited[r][c + 1]) stack.push([r, c + 1])
         
     }
     
-    return numOfIslands > 0 ? true : false
+    return foundIslands > 0
 }
