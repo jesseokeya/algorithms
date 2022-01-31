@@ -3,37 +3,28 @@
  * @return {number}
  */
 var numIslands = function(grid) {
-    const visited = grid.map(row => row.map(cell => false))
-    let islands = 0
+    let numOfIslands = 0
     
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[0].length; j++) {
-            if (dfs(grid, i, j, visited)) islands++
+            if (grid[i][j] === "1") numOfIslands += dfs(grid, i, j)
         }
     }
     
-    return islands
+    return numOfIslands
 };
 
-const dfs = (grid, i, j, visited) => {
-    const stack = [[i, j]]
-    let foundIslands = 0
-    
-    while (stack.length) {
-        const [r, c] = stack.pop()
-        
-        if (visited[r][c]) continue
-        visited[r][c] = true
-        
-        if (grid[r][c] === "0") continue
-        foundIslands++
-        
-        if (r > 0 && !visited[r - 1][c]) stack.push([r - 1, c])
-        if (r < grid.length - 1 && !visited[r + 1][c]) stack.push([r + 1, c])
-        
-        if (c > 0 && !visited[r][c - 1]) stack.push([r, c - 1])
-        if (c < grid[0].length - 1 && !visited[r][c + 1]) stack.push([r, c + 1])
+const dfs = (grid, i, j) => {
+    if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] === "0") {
+        return 0
     }
     
-    return foundIslands > 0
+    grid[i][j] = "0"
+    
+    dfs(grid, i - 1, j)
+    dfs(grid, i + 1, j)
+    dfs(grid, i, j - 1)
+    dfs(grid, i, j + 1)
+    
+    return 1
 }
