@@ -33,7 +33,6 @@ const dfs = (grid, i, j, visited) => {
         
         if (c > 0 && !visited[r][c - 1]) stack.push([r, c - 1])
         if (c < grid[0].length - 1 && !visited[r][c + 1]) stack.push([r, c + 1])
-        
     }
     
     return foundIslands > 0
