@@ -20,9 +20,9 @@ const dfs = (grid, i, j) => {
         return 0
     }
     
-    islands++
-    
     grid[i][j] = 0
+    
+    islands++
     
     islands += dfs(grid, i - 1, j)
     islands += dfs(grid, i + 1, j)
