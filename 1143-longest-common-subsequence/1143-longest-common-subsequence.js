@@ -16,7 +16,6 @@ var longestCommonSubsequence = function(text1, text2) {
             }
         }
     }
-    
-    console.log(dp)
+
     return dp[row][col]
 };
