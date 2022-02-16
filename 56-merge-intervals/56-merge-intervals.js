@@ -8,12 +8,13 @@ var merge = function(intervals) {
     
     for (const [start, end] of intervals) {
         const idx = results.length - 1
-        const lastElem = results[idx][1]
-        if (start <= lastElem) {
-            results[idx][1] = Math.max(lastElem, end)
+        const lastEnd = results[idx][1]
+        if (start <= lastEnd) {
+            results[idx][1] = Math.max(lastEnd, end)
         } else {
             results.push([start, end])
         }
     }
+    
     return results
 };
