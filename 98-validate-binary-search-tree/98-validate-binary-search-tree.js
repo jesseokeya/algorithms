@@ -16,6 +16,5 @@ var isValidBST = function(root) {
         if (node.val > max || node.val < min) return false
         return validate(node.left, min, node.val - 1) && validate(node.right, node.val + 1, max)
     }
-    
-    return validate(root, -Infinity, Infinity)
+    return validate(root)
 };
