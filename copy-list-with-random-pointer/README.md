@@ -1,3 +1,4 @@
+[Discussion Post (created on 13/2/2022 at 9:3)](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/1845971/Javascript-Solution)  
 [Discussion Post (created on 10/1/2021 at 14:35)](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/1059711/Javascript-3-Pass-O(n)-with-WeakMap.)  
 <h2>138. Copy List with Random Pointer</h2><h3>Medium</h3><hr><div><p>A linked list of length <code>n</code> is given such that each node contains an additional random pointer, which could point to any node in the list, or <code>null</code>.</p>
 
