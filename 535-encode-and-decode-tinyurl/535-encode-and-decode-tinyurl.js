@@ -16,7 +16,6 @@ var encode = function(longUrl, len = size) {
     if (mappings.has(hash)) return encode(longUrl, len + 1)
     
     mappings.set(hash, longUrl)
-    console.log(mappings)
     return `http://tinyurl.com/${hash}`
 };
 
