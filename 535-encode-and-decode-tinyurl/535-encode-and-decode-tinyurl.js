@@ -1,4 +1,4 @@
-const mappings = new Map(), size = 3
+const mappings = new Map(), size = 1
 
 /**
  * Encodes a URL to a shortened URL.
