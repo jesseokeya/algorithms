@@ -9,11 +9,9 @@ var maxProduct = function(words) {
         const word = words[i]
         for (let j = 0; j < uniqueSets.length; j++) {
             const set = uniqueSets[j]
-            // if (seen.has(`${i}#${j}`) || seen.has(`${j}#${i}`)) continue
             if (i !== j && hasNoIntersections(word, set)) {
                 max = Math.max(max, words[j].length * word.length)
             }
-            // seen.add(`${i}#${j}`, `${j}#${i}`)
         }
     }
     
