@@ -13,7 +13,7 @@
  */
 var reverseBetween = function(head, left, right) {
     let target = null, count = 0, node = head
-    const diff = right - left, values = []
+    const values = []
     
     while (node) {
         if (count === left - 1) target = node
