@@ -3,18 +3,20 @@
  * @return {number[][]}
  */
 var threeSum = function(nums) {
-    const target = 0, results = [], seen = new Set()
+    const results = [], seen = new Set()
     nums = nums.sort((a, b) => a - b)
+    
     for (let i = 0; i < nums.length; i++) {
         let left = i + 1, right = nums.length - 1
+        
         while (left < right) {
-            const sum = nums[i] + nums[left] + nums[right]
-            if (sum > target) right--
-            else if (sum < target) left++
+            const sum = nums[left] + nums[i] + nums[right]
+            if (sum > 0) right--
+            else if (sum < 0) left++
             else {
-                const key = `${nums[i]},${nums[left]},${nums[right]}`
+                const key = `${nums[left]}#${nums[i]}${nums[right]}`
                 if (!seen.has(key)) {
-                    results.push([nums[i], nums[left], nums[right]])
+                    results.push([nums[left], nums[i], nums[right]])
                     seen.add(key)
                 }
                 left++
@@ -22,5 +24,7 @@ var threeSum = function(nums) {
             }
         }
     }
+    
     return results
+    
 };
