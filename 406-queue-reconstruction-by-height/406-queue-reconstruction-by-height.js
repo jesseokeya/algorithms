@@ -9,6 +9,5 @@ var reconstructQueue = function(people) {
         if (!result[k]) result[k] = [h, k]
         else result.splice(k, 0, [h, k])
     }
-    
     return result
 };
