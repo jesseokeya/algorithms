@@ -11,17 +11,17 @@
  * @return {number[][]}
  */
 var levelOrder = function(root) {
-    if (!root) return []
-    const queue = [root], results = []
-    while (queue.length) {
-        const len = queue.length, values = []
-        for (let i = 0; i < len; i++) {
-            const node = queue.shift()
-            values.push(node.val)
-            if (node.left) queue.push(node.left)
-            if (node.right) queue.push(node.right)
-        }
-        results.push(values)
+    const results = []
+    
+    if (!root) return results
+    
+    const dfs = (node, level) => {
+        results[level] = [...(results[level] || []), node.val]
+        if (node.left) dfs(node.left, level + 1)
+        if (node.right) dfs(node.right, level + 1)
     }
+    
+    dfs(root, 0)
+    
     return results
 };
