@@ -17,7 +17,6 @@ var evalRPN = function(tokens) {
         } else {
             const operation = operations.get(token)
             const prev = stack.pop(), value = stack.pop()
-            console.log({ prev, value, token })
             stack.push(operation(value, prev))
         }
     }
