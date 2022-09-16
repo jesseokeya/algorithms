@@ -3,20 +3,19 @@
  * @return {number}
  */
 var uniquePathsWithObstacles = function(obstacleGrid) {
-    const explore = (i, j, memo) => {
-        const key = `${i}.${j}`
-        if (memo.has(key)) return memo.get(key)
-        
-        if (i < 0 || i >= obstacleGrid.length 
-            || j < 0 || j >= obstacleGrid[0].length 
-            || obstacleGrid[i][j] === 1) return 0
-        
-        else if (i === obstacleGrid.length - 1 && j === obstacleGrid[0].length - 1) return 1
-        
-        memo.set(key, explore(i + 1, j, memo) + explore(i, j + 1, memo))
-        return memo.get(key)
-        
+    const row = obstacleGrid.length, col = obstacleGrid[0].length
+    const dp = Array.from({ length: row }, () => new Uint32Array(col))
+    
+    for (let i = 0; i < obstacleGrid.length; i++) {
+         for (let j = 0; j < obstacleGrid[i].length; j++) {
+             const cell = obstacleGrid[i][j]
+             if (cell === 0) {
+                 if (i > 0) dp[i][j] += dp[i - 1][j]
+                 if (j > 0) dp[i][j] += dp[i][j - 1]
+                 if (i === 0 && j === 0) dp[i][j] = 1
+             }
+         }
     }
     
-    return explore(0, 0, new Map())
+    return dp[row - 1][col - 1]
 };
