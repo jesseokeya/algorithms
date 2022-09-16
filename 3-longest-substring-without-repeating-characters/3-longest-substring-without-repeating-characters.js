@@ -3,8 +3,7 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function(s) {
-    const mappings = new Map()
-    let windowStart = 0, result = -Infinity
+    let windowStart = 0, mappings = new Map(), result = -Infinity
     
     for (let windowEnd = 0; windowEnd < s.length; windowEnd++) {
         const right = s[windowEnd]
