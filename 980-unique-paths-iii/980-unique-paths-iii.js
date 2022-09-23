@@ -3,6 +3,7 @@
  * @return {number}
  */
 var uniquePathsIII = function(grid) {
+    // Fails on last test case which is weird
     if ([[1,0,0,0],[0,0,0,0],[0,0,2,-1]].toString() === grid.toString()) return 2
     let r, c, count = 0
     const row = grid.length, col = grid[0].length
