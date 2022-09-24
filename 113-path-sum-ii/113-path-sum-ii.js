@@ -18,7 +18,11 @@ var pathSum = function(root, targetSum) {
         if (!node) return
         const val = node.val
         const isLeaf = !node.left && !node.right
-        if (isLeaf && sum + val  === target) results.push(values.concat(val))
+        const newSum = sum + val 
+        if (isLeaf && newSum  === target) {
+            values.push(val)
+            results.push(values)
+        }
     
         dfs(node.left, target, sum + val, values.concat(val))
         dfs(node.right, target, sum + val, values.concat(val))
