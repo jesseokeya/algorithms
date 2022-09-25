@@ -3,22 +3,21 @@
  * @return {string}
  */
 var longestPalindrome = function(s) {
-    let max = [0, 1]
+    let result = [0, 1]
     
     for (let i = 0; i < s.length; i++) {
-        const even = getPalindrome(i - 1, i, s)
-        const odd = getPalindrome(i - 1, i + 1, s)
+        const even = getPalindrome(i - 1, i, s), odd = getPalindrome(i - 1, i + 1, s)
         
         const localMax = even[1] - even[0] > odd[1] - odd[0] ? even : odd
-        max = max[1] - max[0] > localMax[1] - localMax[0] ? max : localMax
+        result = result[1] - result[0] > localMax[1] - localMax[0] ? result : localMax
     }
     
-    return s.slice(max[0], max[1])
+    return s.slice(result[0], result[1])
 };
 
-const getPalindrome = (left, right, str) => {
-    while (left >= 0 && right < str.length) {
-        if (str[left] !== str[right]) break
+const getPalindrome = (left, right, s) => {
+    while (left >= 0 && right < s.length) {
+        if (s[left] !== s[right]) break
         left--
         right++
     }
