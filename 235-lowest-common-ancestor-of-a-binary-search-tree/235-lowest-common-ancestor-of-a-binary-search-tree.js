@@ -13,20 +13,38 @@
  * @return {TreeNode}
  */
 var lowestCommonAncestor = function(root, p, q) {
-    const dfs = (node) => {
-        // Base case
-        if (!node) return null
-        else if (node === p || node === q) return node
-        
-        // Recurse
-        const left = dfs(node.left)
-        const right = dfs(node.right)
-        
-        if (!left) return right
-        else if (!right) return left
-
-        return node
+    const pPath = getPath(root, p)
+    const qPath = getPath(root, q)
+    
+    let i = 0, j = 0, lastSeen = null
+    while (i < pPath.length && j < qPath.length) {
+        console.log(pPath[i])
+        if (pPath[i] === qPath[j]) lastSeen = pPath[i]
+        else break
+        i++
+        j++
     }
     
-    return dfs(root)
+    return lastSeen
 };
+
+const getPath = (root, target) => {
+    let results = []
+    
+    const dfs = (node, prefix) => {
+        if (!node) return
+        prefix.push(node)
+        if (node === target) {
+            results = prefix.slice()
+            return
+        }
+        dfs(node.left, prefix)
+        dfs(node.right, prefix)
+        prefix.pop()
+        
+    }
+    
+    dfs(root, [])
+    
+    return results
+}
