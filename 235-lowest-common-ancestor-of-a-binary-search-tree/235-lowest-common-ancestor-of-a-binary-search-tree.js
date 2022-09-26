@@ -13,12 +13,10 @@
  * @return {TreeNode}
  */
 var lowestCommonAncestor = function(root, p, q) {
-    const pPath = getPath(root, p)
-    const qPath = getPath(root, q)
+    const pPath = getPath(root, p), qPath = getPath(root, q)
     
     let i = 0, j = 0, lastSeen = null
     while (i < pPath.length && j < qPath.length) {
-        console.log(pPath[i])
         if (pPath[i] === qPath[j]) lastSeen = pPath[i]
         else break
         i++
