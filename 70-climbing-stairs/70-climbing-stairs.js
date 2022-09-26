@@ -3,14 +3,13 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-    const climb = (step, memo) => {
-        if (memo.has(step)) return memo.get(step)
-        if (step < 0) return 0
-        else if (step === 0) return 1
-        memo.set(step, climb(step - 1, memo) + climb(step - 2, memo))
-        return memo.get(step)
+    const dp = new Uint32Array(n + 1)
+    dp[1] = 1
+    dp[2] = 2
+    
+    for (let i = 3; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2]
     }
     
-    return climb(n, new Map())
-    
+    return dp[n]
 };
