@@ -1,7 +1,7 @@
 /*
  * pushStack = [1, 2], popStack = []
  * if popStack.length is 0 transfer
- * pushStack = [1, 2], popStack = []
+ * pushStack = [], popStack = [2, 1]
  */
 var MyQueue = function() {
     this.popStack = []
