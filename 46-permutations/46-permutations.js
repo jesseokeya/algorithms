@@ -13,7 +13,7 @@ var permute = function(nums) {
             if (!seen.has(i)) {
                 seen.add(i)
                 const value = nums[i]
-                permutation(i, prefix.concat(value), seen)
+                permutation(i + 1, prefix.concat(value), seen)
                 seen.delete(i)
             }
         }
