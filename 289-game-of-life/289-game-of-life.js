@@ -1,9 +1,9 @@
 /**
  * @param {number[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
- * [-1,-1][-1,0][-1, 1]
+ * [-1,-1][-1,0][-1,1]
  * [0, -1][0, 0][0, 1]
-   [1, -1][1, 0][1, 1]
+ * [1, -1][1, 0][1, 1]
  */
 var gameOfLife = function(board) {
     const row = board.length, col = board[0].length
