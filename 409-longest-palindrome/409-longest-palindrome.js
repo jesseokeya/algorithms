@@ -1,29 +1,29 @@
 /**
  * @param {string} s
  * @return {number}
- *
+ 
+ * case 1 = abc | cba, case = abc d cba 
  */
 var longestPalindrome = function(s) {
-    let count = 0, oddFound = false
-    const mappings = createMappings(s)
+    let count = 0, mappings = frequencyCount(s), foundOdd = false
     
-    for (const [, v] of mappings) {
-        if (v % 2 === 0) count += v
-        else {
-            oddFound = true
-            count += (v - 1)
+    for (const [key, value] of mappings) {
+        if (value % 2 === 0) count += value
+        else if (value % 2 !== 0) {
+            count += (value - 1)
+            foundOdd = true
         }
     }
     
-    if (oddFound) count++
+    if (foundOdd) count++
     
     return count
 };
 
-const createMappings = (word) => {
+const frequencyCount = (s) => {
     const mappings = new Map()
     
-    for (const char of word) {
+    for (const char of s) {
         if (!mappings.has(char)) mappings.set(char, 1)
         else mappings.set(char, mappings.get(char) + 1)
     }
