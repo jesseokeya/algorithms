@@ -9,17 +9,23 @@
 /**
  * @param {TreeNode} root
  * @return {boolean}
- 
-  value = 1, min = -Infinity, max = Infinity, result
-  true && true
-  3 
  */
 var isValidBST = function(root) {
-    const isValid = (node, min, max) => {
-        if (!node) return true
-        if (node.val <= min || node.val >= max) return false
-        return isValid(node.left, min, node.val) && isValid(node.right, node.val, max)
+    let values = []
+    
+    const dfs = (node) => {
+        if (!node) return 
+        
+        dfs(node.left)
+        values.push(node.val)
+        dfs(node.right)
     }
     
-    return isValid(root, -Infinity, Infinity)
+    dfs(root)
+    
+    for (let i = 0; i < values.length; i++) {
+        if (values[i] >= values[i + 1]) return false
+    }
+    
+    return true
 };
