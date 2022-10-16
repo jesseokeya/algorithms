@@ -17,7 +17,7 @@ var lowestCommonAncestor = function (root, p, q) {
     result;
   const pValues = collect(root, p),
     qValues = collect(root, q);
-  while (i <= pValues.length && j <= qValues.length) {
+  while (i < pValues.length && j < qValues.length) {
     if (pValues[i] === qValues[j]) result = pValues[i] || qValues[j];
     else break;
     i++;
