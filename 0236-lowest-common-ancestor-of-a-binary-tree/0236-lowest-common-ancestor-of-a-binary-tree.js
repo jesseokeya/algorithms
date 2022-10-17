@@ -11,42 +11,36 @@
  * @param {TreeNode} q
  * @return {TreeNode}
  */
-var lowestCommonAncestor = function (root, p, q) {
-  let i = 0,
-    j = 0,
-    result;
-  const pValues = collect(root, p),
-    qValues = collect(root, q);
-  while (i < pValues.length && j < qValues.length) {
-    if (pValues[i] === qValues[j]) result = pValues[i] || qValues[j];
-    else break;
-    i++;
-    j++;
-  }
-
-  return result;
-};
-
-const collect = (root, target) => {
-  let results = [];
-
-  const dfs = (node, values) => {
-    if (!node) return [];
-
-    values.push(node);
-
-    if (node === target) {
-      results = values.slice();
-      return;
+var lowestCommonAncestor = function(root, p, q) {
+    const pPath = getPath(root, p), qPath = getPath(root, q)
+    
+    let i = 0, j = 0, result
+    while (i < pPath.length && j < qPath.length) {
+        if (pPath[i] !== qPath[j]) break
+        result = pPath[i] || qPath[j]
+        i++
+        j++
     }
-
-    dfs(node.left, values);
-    dfs(node.right, values);
-
-    values.pop();
-  };
-
-  dfs(root, []);
-
-  return results;
+    
+    return result
 };
+
+const getPath = (root, target) => {
+    let results = []
+    
+    const dfs = (node, values) => {
+        if (!node) return
+        values.push(node)
+        if (node === target) {
+            results = values.slice()
+            return
+        }
+        dfs(node.left, values)
+        dfs(node.right, values)
+        values.pop()
+    }
+    
+    dfs(root, [])
+    
+    return results
+}
