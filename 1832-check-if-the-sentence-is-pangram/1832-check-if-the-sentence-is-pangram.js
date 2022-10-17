@@ -14,7 +14,5 @@ var checkIfPangram = function(sentence) {
         seen.add(letter)
     }
     
-    console.log(countOcurrences)
-    
     return countOcurrences === limit + 1
 };
