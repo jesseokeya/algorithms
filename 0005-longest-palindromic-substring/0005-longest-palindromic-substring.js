@@ -1,7 +1,6 @@
 /**
  * @param {string} s
  * @return {string}
- *
  */
 var longestPalindrome = function(s) {
     let results = [0, 1]
@@ -24,5 +23,6 @@ const getPalindrome = (left, right, s) => {
         right++
         left--
     }
+    
     return [left + 1, right]
 }
