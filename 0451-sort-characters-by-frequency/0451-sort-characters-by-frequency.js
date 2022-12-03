@@ -3,25 +3,36 @@
  * @return {string}
  */
 var frequencySort = function(s) {
-    let result = ""
+  // create a map to store the character counts
+    let countMap = {};
     
-    const mappings = createMappings(s)
-    const keys = Object.keys(mappings)
-    const sorted = keys.sort((a, b) => mappings[b] - mappings[a])
-    
-    for (const val of sorted) {
-        result += val.repeat(mappings[val])
+    // loop through the characters in the string and increment the count in the map
+    for (let ch of s) {
+        if (!countMap[ch]) {
+            countMap[ch] = 1;
+        } else {
+            countMap[ch] += 1;
+        }
     }
     
-    return result
+    // sort the characters in the map by count, in decreasing order
+    let sortedChars = Object.keys(countMap).sort((a, b) => countMap[b] - countMap[a]);
+    
+    // create a new string with the sorted characters
+    let sortedString = "";
+    for (let ch of sortedChars) {
+        sortedString += ch.repeat(countMap[ch]);
+    }
+    
+    return sortedString;
 };
 
-const createMappings = (word) => {
-    const mappings = {}
+// const createMappings = (word) => {
+//     const mappings = {}
     
-    for (const char of word) {
-       mappings[char] = mappings[char] + 1 || 1
-    }
+//     for (const char of word) {
+//        mappings[char] = mappings[char] + 1 || 1
+//     }
     
-    return mappings
-}
+//     return mappings
+// }
